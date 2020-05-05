@@ -18,3 +18,9 @@ std::string Image::getName(){
 std::vector<int> Image::getData(){
   return this->data;
 }
+
+Image::Image(){}
+
+Image::Image(std::vector<int> data): data(data){}
+
+Image::Image(std::string name, std::vector<int> data): data(data), name(name){}
