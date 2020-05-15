@@ -12,9 +12,9 @@ TEST_CASE("Image Reader and Image Classes", ""){
   ImageReader reader{};
   im = reader.read("../data/test.txt");
 
-  SauvolaFilter sF{10};
-
-
   REQUIRE(im.getData() == std::vector<int> {89, 31, 25, 54, 1, 9, 100, 254, 198});
   REQUIRE(im.getName() == "test");
+
+  SauvolaFilter sF{1};
+  sF.filter(im);
 }
