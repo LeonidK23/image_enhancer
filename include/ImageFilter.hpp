@@ -4,7 +4,7 @@
 #include "Image.hpp"
 
 class ImageFilter {
-private:
+protected:
   int window_size = 15;
 public:
   ImageFilter();

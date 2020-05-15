@@ -10,7 +10,7 @@ target_include_directories(catch INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/catch")
 add_library(image_handlers src/Image.cpp src/ImageReader.cpp)
 target_include_directories(image_handlers PUBLIC "include/")
 
-add_library(image_filters src/ImageFilter.cpp)
+add_library(image_filters src/ImageFilter.cpp src/SauvolaFilter.cpp)
 target_include_directories(image_filters PUBLIC "include/")
 
 enable_testing()
