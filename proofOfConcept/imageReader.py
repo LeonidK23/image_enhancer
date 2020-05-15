@@ -8,9 +8,9 @@ class imageReader:
     def read(self, filepath, to_grayscale=True):
         img = Image.open(filepath)
         if to_grayscale:
-            data = np.asarray(img.convert('L'), dtype="int32")
+            data = np.asarray(img.convert('L'))
         else:
-            data = np.asarray(img, dtype="int32")
+            data = np.asarray(img)
 
         return data
 
