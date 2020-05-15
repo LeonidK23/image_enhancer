@@ -7,8 +7,10 @@ void Image::setName(std::string name){
   this->name = name;
 }
 
-void Image::setData(std::vector<int> data){
+void Image::setData(std::vector<int> data, int m, int n){
   this->data = data;
+  this->m = m;
+  this->n = n;
 }
 
 std::string Image::getName(){
@@ -17,6 +19,10 @@ std::string Image::getName(){
 
 std::vector<int> Image::getData(){
   return this->data;
+}
+
+std::vector<int> Image::getShape(){
+  return std::vector<int> {this->m, this->n};
 }
 
 Image::Image(){}

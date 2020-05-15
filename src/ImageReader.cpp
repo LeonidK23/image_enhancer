@@ -24,7 +24,7 @@ Image ImageReader::read(std::string filePath){
   fileName = filePath.substr(filenameBegin, filenameEnd - filenameBegin);
 
   img.setName(fileName);
-  img.setData(data);
+  img.setData(data, 3, 3);
 
   return img;
 }
