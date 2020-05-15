@@ -7,6 +7,10 @@ void Image::setName(std::string name){
   this->name = name;
 }
 
+void Image::setData(std::vector<int> data){
+  this->data = data;
+}
+
 void Image::setData(std::vector<int> data, int m, int n){
   this->data = data;
   this->m = m;
