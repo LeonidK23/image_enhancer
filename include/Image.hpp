@@ -8,7 +8,7 @@ class Image {
 private:
   std::string name;
   std::vector<int> data;
-  int m = 5, n = 5;
+  int m = 493, n = 643;
 public:
   Image();
   Image(std::vector<int>);

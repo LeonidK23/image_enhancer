@@ -8,6 +8,7 @@
 class ImageReader{
 public:
   Image read(std::string filepath);
+  void write(Image, int);
 };
 
 #endif
