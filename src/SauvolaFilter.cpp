@@ -49,7 +49,7 @@ Image SauvolaFilter::filter(Image img){
       filtered_image_vec.push_back(255*(current_pixel > sauvola_threshold));
     }
   }
-
+  
   Image filtered_image {img.getName() + "_filtered", filtered_image_vec};
 
   return filtered_image;
