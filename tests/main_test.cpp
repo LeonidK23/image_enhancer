@@ -9,6 +9,7 @@
 
 TEST_CASE("Image Reader and Image Classes", ""){
   Image im{};
+  Image filtered_im{};
   ImageReader reader{};
   im = reader.read("../data/test.txt");
 
@@ -16,5 +17,5 @@ TEST_CASE("Image Reader and Image Classes", ""){
   REQUIRE(im.getName() == "test");
 
   SauvolaFilter sF{1};
-  sF.filter(im);
+  filtered_im = sF.filter(im);
 }
