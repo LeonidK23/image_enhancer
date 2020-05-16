@@ -6,4 +6,6 @@ Original image:
 
 After filtering using Sauvola threshold:
 
-![](imgs/page_photo_sauvola_c.jpeg)
+![](imgs/page_photo_filtered.jpeg)
+
+TODO: proper testing

@@ -15,9 +15,8 @@ TEST_CASE("Image Reader and Image Classes", ""){
   Image im{};
   Image filtered_im{};
   ImageReader reader{};
-  im = reader.read("../data/page_photo.txt");
+  im = reader.read("../imgs/page_photo.png");
 
-  // REQUIRE(im.getData() == std::vector<int> {89, 31, 25, 54, 1, 9, 100, 254, 198});
   REQUIRE(im.getName() == "page_photo");
 
   SauvolaFilter sF{15};
