@@ -1,16 +1,23 @@
-#include "Image.hpp"
-#include "SauvolaFilter.hpp"
-
 #include <iostream>
 #include <numeric>
 #include <cmath>
 
+#include "Image.hpp"
+#include "SauvolaFilter.hpp"
+
 SauvolaFilter::SauvolaFilter(){
   this->window_size = 15;
+  this->k = 0.1;
 }
 
 SauvolaFilter::SauvolaFilter(int window_size){
   this->window_size = window_size;
+  this->k = 0.1;
+}
+
+SauvolaFilter::SauvolaFilter(int window_size, double k){
+  this->window_size = window_size;
+  this->k = k;
 }
 
 Image SauvolaFilter::filter(Image img){
@@ -44,12 +51,12 @@ Image SauvolaFilter::filter(Image img){
       mean = std::accumulate(window_frame.begin(), window_frame.end(), 0) / window_frame.size();
       sq_sum = std::inner_product(window_frame.begin(), window_frame.end(), window_frame.begin(), 0.0);
       std = std::sqrt(sq_sum / window_frame.size() - mean * mean);
-      sauvola_threshold = mean*(1 - 0.1*(1 - std/128));
+      sauvola_threshold = mean*(1 - this->k*(1 - std/128));
       current_pixel = window_frame[wnd_size*(wnd_size*2 + 1) + wnd_size];
       filtered_image_vec.push_back(255*(current_pixel > sauvola_threshold));
     }
   }
-  
+
   Image filtered_image {img.getName() + "_filtered", filtered_image_vec};
 
   return filtered_image;

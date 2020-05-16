@@ -19,7 +19,7 @@ TEST_CASE("Image Reader and Image Classes", ""){
 
   REQUIRE(im.getName() == "page_photo");
 
-  SauvolaFilter sF{15};
+  SauvolaFilter sF{15, 0.1};
   auto start = system_clock::now();
   filtered_im = sF.filter(im);
   auto end = system_clock::now();
