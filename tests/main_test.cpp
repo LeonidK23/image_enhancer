@@ -3,13 +3,13 @@
 #include <iostream>
 #include <chrono>
 
-using std::chrono::system_clock;
-using std::chrono::duration;
-
 #include "catch.hpp"
 #include "Image.hpp"
 #include "ImageReader.hpp"
 #include "SauvolaFilter.hpp"
+
+using std::chrono::system_clock;
+using std::chrono::duration;
 
 TEST_CASE("Image Reader and Image Classes", ""){
   Image im{};
